@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static( rootPath + '/app'));
 
-
-app.listen(8000);
-console.log('Listening on port ' + 8000 + '...');
+var port = 8000
+app.listen(port, function(){
+  console.log('Listening on port ' + 8000 + '...');
+});

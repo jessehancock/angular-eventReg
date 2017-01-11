@@ -1,24 +1,77 @@
 <!doctype html>
-<html ng-app="eventsApp">
+<html ng-app="eventApp">
+
 <head>
-    <base href="/"/>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/lib/jquery-ui-1.11.4.custom/jquery-ui.css">
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css "> -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./lib/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <link rel="icon" type="image/png" href="./img/Pie.png">
+
 </head>
 
 
 <body>
-  <h1>hello</h1>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav"></ul>
+            </div>
+        </div>
+        <div ng-controller='EventCtrl' style="padding: 0 20px 0 20px">
+          <img ng-src="{{event.imageUrl}}" alt="{{event.name}}">
+            <div class="row">
+                <div class="spann11">
+                    <h2>{{event.name}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span3">
+                    <div><strong>Date:</strong>{{event.date}}</div>
+                    <div><strong>Time:</strong>{{event.time}}</div>
+                </div>
+                <div class="span4">
+                  <address>
+                    <strong>Address:</strong><br>
+                    {{event.location.address}}<br>
+                    {{event.location.city}}, {{event.location.province}}
+                  </address>
+                </div>
+            </div>
+            <hr>
+            <h3>Sessions</h3>
+            <ul class="thumbnails">
+              <li ng-repeat="session in event.sessions">
+              <div class="row session">
+                <div class="well span9">
+                  <h4 class="well-title">{{session.name}}</h4>
+                </div>
+              </div>
+              </li>
+            </ul>
 
 
-<script src="/lib/jquery.min.js"></script>
-<script src="/lib/angular/angular.js"></script>
-<script src="/lib/angular/angular-resource.js"></script>
-<script src="/lib/angular/angular-route.min.js"></script>
-<script src="/lib/underscore-1.4.4.min.js"></script>
-<script src="/js/app.js"></script>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.1/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/controllers/EventCtrl.js"></script>
 
 
 </body>
+
 </html>
