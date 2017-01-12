@@ -78,3 +78,14 @@ select, textarea {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+/*be sure to include ngAnimate as a module to hook into more
+advanced animations*/
+input {
+  transition:0.5s linear all;
+  background: white;
+}
+input.ng-invalid.ng-dirty {
+  background: pink;
+  color:white;
+}
