@@ -1,3 +1,3 @@
 // INITILIZE APP
 // ============================================================
-angular.module("eventApp", []);
+angular.module("eventApp", ['ngSanitize']);

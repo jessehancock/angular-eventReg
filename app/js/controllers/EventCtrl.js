@@ -3,6 +3,10 @@
 angular.module("eventApp").controller("EventCtrl", function($scope) {
     // VARIABLES
     // ============================================================
+    $scope.snippet = '<span>ng-bind-html</span>'
+    $scope.bullValue = true;
+    $scope.myStyle = {color:"maroon"};
+    $scope.sortOrder = "name"
     $scope.event = {
         name: "Angular Boot Camp",
         date: "1/1/2013",
@@ -28,7 +32,7 @@ angular.module("eventApp").controller("EventCtrl", function($scope) {
         duration: 3,
         level: "Introductory",
         abstract: "This session will take a closer look at scopes.  Learn what they do, how they do it, and how to get them to do it for you.",
-        upVoteCount: 3
+        upVoteCount: 0
     }, {
         id: 3,
         name: "Well Behaved Controllers",
@@ -36,10 +40,17 @@ angular.module("eventApp").controller("EventCtrl", function($scope) {
         duration: 2,
         level: "Intermediate",
         abstract: "Controllers are the beginning of everything Angular does.  Learn how to craft controllers that will win the respect of your friends and neighbors.",
-        upVoteCount: 2
+        upVoteCount: 0
     }]
   }
 
     // FUNCTIONS
     // ============================================================
+    $scope.upVote = function(session){
+      session.upVoteCount++
+    }
+    $scope.downVote = function(session){
+      session.upVoteCount--
+    }
+
 });
