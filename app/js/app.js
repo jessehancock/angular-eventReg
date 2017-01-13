@@ -14,9 +14,9 @@ angular.module("eventApp", ['ngSanitize', 'ui.router'])
 		controller: 'NewEventCtrl',
     templateUrl: './views/newEvent.html'
    })
-  //  .state('user', {
-  //   url: '/user/:username',
-  //   templateUrl: './app/user/user.html',
-	// 	controller: 'userCtrl'
-  //  })
+   .state('editProfile', {
+    url: '/editProfile',
+    templateUrl: './views/editProfile.html',
+		// controller: 'userCtrl'
+   })
 }])
